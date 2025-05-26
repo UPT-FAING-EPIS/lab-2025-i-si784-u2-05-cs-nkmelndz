@@ -9,28 +9,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
 
-    - name: Install DocFX
-      run: dotnet tool install -g docfx
+      - name: Install DocFX
+        run: dotnet tool install -g docfx
 
-    - name: Generate API Metadata
-      run: docfx metadata
-      working-directory: Bank
+      - name: Generate API Metadata
+        run: docfx metadata
+        working-directory: Bank
 
-    - name: Build DocFX site
-      run: docfx build
-      working-directory: Bank
+      - name: Build DocFX site
+        run: docfx build
+        working-directory: Bank
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./Bank/_site
-        publish_branch: gh-pages
-        keep_files: true
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./Bank/_site
+          publish_branch: gh-pages
+          user_name: "GitHub Actions"
+          user_email: "github-actions@users.noreply.github.com"
+          keep_files: true

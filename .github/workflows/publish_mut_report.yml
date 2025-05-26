@@ -1,0 +1,48 @@
+name: Actividad04 - Reporte de mutaciones
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  mutation-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Configurar .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restaurar dependencias
+        run: dotnet restore Bank/Bank.sln
+
+      - name: Compilar solución
+        run: dotnet build Bank/Bank.sln --configuration Release --no-restore
+
+      - name: Ejecutar pruebas
+        run: dotnet test Bank/Bank.sln --no-build --configuration Release --verbosity normal
+
+      - name: Instalar Stryker
+        run: dotnet tool install -g dotnet-stryker
+
+      - name: Ejecutar Stryker
+        working-directory: ./Bank
+        run: dotnet-stryker --reporter html --output StrykerOutput
+
+      - name: Renombrar mutation-report.html a index.html
+        run: |
+          cp Bank/StrykerOutput/reports/mutation-report.html Bank/StrykerOutput/reports/index.html
+
+      - name: Publicar reporte en GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./Bank/StrykerOutput/reports
+          destination_dir: mutacion
+          keep_files: true
