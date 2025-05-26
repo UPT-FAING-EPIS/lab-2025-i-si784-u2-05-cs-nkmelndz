@@ -1,17 +1,17 @@
 {
   "docs/getting-started.html": {
     "href": "docs/getting-started.html",
-    "title": "Getting Started",
+    "title": "Getting Started | Bank",
     "summary": "Getting Started"
   },
   "docs/introduction.html": {
     "href": "docs/introduction.html",
-    "title": "Introduction",
+    "title": "Introduction | Bank",
     "summary": "Introduction"
   },
   "index.html": {
     "href": "index.html",
-    "title": "Bienvenido a la documentación de Bank",
-    "summary": "Bienvenido a la documentación de Bank Secciones principales Cobertura Stryker Models, Class Tests Esta documentación ha sido generada automáticamente con DocFX."
+    "title": "Documentación del Proyecto BankDomain | Bank",
+    "summary": "Documentación del Proyecto BankDomain Bienvenido a la documentación del BankDomain. Recursos Ver Reporte de Cobertura Ver Documentación de Clases (API) Ver Documentación de la Clase BankAccount Ver Reporte de Mutaciones Para más detalles sobre la sintaxis Markdown, consulta Markdown Guide."
   }
 }
