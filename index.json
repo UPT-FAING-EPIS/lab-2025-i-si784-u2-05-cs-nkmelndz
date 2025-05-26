@@ -1,0 +1,17 @@
+{
+  "docs/getting-started.html": {
+    "href": "docs/getting-started.html",
+    "title": "Getting Started",
+    "summary": "Getting Started"
+  },
+  "docs/introduction.html": {
+    "href": "docs/introduction.html",
+    "title": "Introduction",
+    "summary": "Introduction"
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "Bienvenido a la documentación de Bank",
+    "summary": "Bienvenido a la documentación de Bank Secciones principales Cobertura Stryker Models, Class Tests Esta documentación ha sido generada automáticamente con DocFX."
+  }
+}
