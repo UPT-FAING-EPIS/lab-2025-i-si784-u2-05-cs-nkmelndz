@@ -1,29 +1,36 @@
-name: Actividad03 - Publicar Documentacion
+name: Actividad02 - DocFX en GitHubPages
 
-on: push
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  docfx:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0
-        
-    - name: InitDocFx
-      run: dotnet tool update -g docfx
+        dotnet-version: '8.0.x'
 
-    - name: Generar metadata
-      run: docfx metadata Bank/docfx.json
+    - name: Install DocFX
+      run: dotnet tool install -g docfx
 
-    - name: Build DocSite
-      run: docfx build Bank/docfx.json
+    - name: Generate API Metadata
+      run: docfx metadata
+      working-directory: Bank
 
-    - name: Subir GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
+    - name: Build DocFX site
+      run: docfx build
+      working-directory: Bank
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: Bank/_site
+        publish_dir: ./Bank/_site
+        publish_branch: gh-pages
         keep_files: true

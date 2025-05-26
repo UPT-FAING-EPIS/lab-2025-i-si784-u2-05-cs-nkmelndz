@@ -1,4 +1,4 @@
-name: Actividad04 - Publicar reporte
+name: Actividad03 - Publicar reporte
 
 on:
   push:
@@ -30,8 +30,9 @@ jobs:
       - name: Instalar ReportGenerator
         run: |
           dotnet tool install -g dotnet-reportgenerator-globaltool
+          dotnet tool install -g dotnet-stryker
 
-      - name: Generar reporte  HTML de cobertura
+      - name: Generar reporte HTML de cobertura
         run: |
           report_path=$(find . -type f -name 'coverage.cobertura.xml' | head -n 1)
           reportgenerator "-reports:$report_path" "-targetdir:Bank/Cobertura" -reporttypes:Html
@@ -40,6 +41,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./Bank/Bank.sln
+          publish_dir: ./Bank/Cobertura
           destination_dir: coverage
           keep_files: true
