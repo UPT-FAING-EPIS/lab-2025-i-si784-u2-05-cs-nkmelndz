@@ -4,7 +4,7 @@
     {
       "src": [
         {
-          "src": "../src",
+          "src": "Bank.Domain",
           "files": [
             "**/*.csproj"
           ]
@@ -37,8 +37,8 @@
       "modern"
     ],
     "globalMetadata": {
-      "_appName": "",
-      "_appTitle": "",
+      "_appName": "Bank",
+      "_appTitle": "Bank",
       "_enableSearch": true,
       "pdf": true
     }
