@@ -1,0 +1,29 @@
+name: Actividad03 - Publicar Documentacion
+
+on: push
+jobs:
+  docfx:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0
+        
+    - name: Init DocFx
+      run: dotnet tool update -g docfx
+
+    - name: Generar metadata
+      run: docfx metadata Bank/docfx.json
+
+    - name: Build DocSite
+      run: docfx build Bank/docfx.json
+
+    - name: Subir GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: Bank/_site
+        keep_files: true
