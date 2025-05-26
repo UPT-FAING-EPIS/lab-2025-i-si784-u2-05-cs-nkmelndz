@@ -1,0 +1,45 @@
+name: Actividad04 - Publicar reporte
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-publish-coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v3
+
+      - name: Instalar .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restaurar dependencias
+        run: dotnet restore ./Bank/Bank.sln
+
+      - name: Compilar solución
+        run: dotnet build ./Bank/Bank.sln --configuration Release --no-restore
+
+      - name: Ejecutar pruebas y recolectar cobertura
+        run: dotnet test ./Bank/Bank.sln --configuration Release --no-build --collect:"XPlat Code Coverage"
+
+      - name: Instalar ReportGenerator
+        run: |
+          dotnet tool install -g dotnet-reportgenerator-globaltool
+
+      - name: Generar reporte HTML de cobertura
+        run: |
+          report_path=$(find . -type f -name 'coverage.cobertura.xml' | head -n 1)
+          reportgenerator "-reports:$report_path" "-targetdir:Bank/Cobertura" -reporttypes:Html
+
+      - name: Publicar en GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./Bank/Bank.sln
+          destination_dir: coverage
+          keep_files: true
