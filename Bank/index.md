@@ -2,10 +2,19 @@
 _layout: landing
 ---
 
-# This is the **HOMEPAGE**.
+# Documentación del Proyecto BankDomain
 
-Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
+Bienvenido a la documentación del **BankDomain**.
 
-## Quick Start Notes:
+## Recursos
 
-1. Add images to the *images* folder if the file is referencing an image.
+- [Ver Reporte de Cobertura](./coverage/index.htm)
+
+- [Ver Documentación de Clases (API)](./api/Bank.Domain.html)
+
+- [Ver Documentación de la Clase BankAccount](./api/Bank.Domain.BankAccount.html)
+
+- [Ver Reporte de Mutaciones](./mutacion/index.html)
+
+
+Para más detalles sobre la sintaxis Markdown, consulta [Markdown Guide](http://daringfireball.net/projects/markdown/).
