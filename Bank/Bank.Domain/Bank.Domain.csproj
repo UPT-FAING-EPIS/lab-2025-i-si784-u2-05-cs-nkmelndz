@@ -6,15 +6,15 @@
     <Nullable>enable</Nullable>
     
     <!-- Información del paquete NuGet -->
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>Bank.Domain</PackageId>
-    <Version>1.0.0</Version>
+
     <Authors>nkmelndz</Authors>
-    <Description>Librería para manejar cuentas bancarias básicas</Description>
-    <PackageTags>Bank Account Finance Domain</PackageTags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <PackageDescription>BankDomain</PackageDescription>
+    <PackageId>BankDomain.nkmelndz</PackageId>
     <RepositoryUrl>https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-05-cs-nkmelndz</RepositoryUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression> <!-- O usa PackageLicenseFile -->
-    <Copyright>Copyright © 2025</Copyright>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-05-cs-nkmelndz</PackageProjectUrl>
 
   </PropertyGroup>
 
