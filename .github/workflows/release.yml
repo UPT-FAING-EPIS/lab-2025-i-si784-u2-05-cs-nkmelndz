@@ -48,4 +48,4 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
-          files: "*/.nupkg"
+          files: "Bank/Bank.Domain/bin/Release/*.nupkg"
