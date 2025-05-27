@@ -1,0 +1,51 @@
+name: Actividad05 - Generar NuGetPackage
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Extract version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+
+      - name: Set version in .csproj
+        run: sed -i.bak "s|<Version>.*</Version>|<Version>${VERSION}</Version>|" Bank/Bank.Domain/Bank.Domain.csproj
+
+      - name: Clean sed backup file
+        run: rm Bank/Bank.Domain/Bank.Domain.csproj.bak
+
+      - name: Restore dependencies
+        run: dotnet restore Bank/Bank.Domain/Bank.Domain.csproj
+
+      - name: Build the project
+        run: dotnet build Bank/Bank.Domain/Bank.Domain.csproj --configuration Release
+
+      - name: Pack the NuGet package
+        run: dotnet pack Bank/Bank.Domain/Bank.Domain.csproj -c Release
+
+      - name: Publish package to GitHub Packages
+        run: dotnet nuget push Bank/Bank.Domain/bin/Release/*.nupkg --skip-duplicate --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GH_PACKAGES }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          files: "*/.nupkg"
