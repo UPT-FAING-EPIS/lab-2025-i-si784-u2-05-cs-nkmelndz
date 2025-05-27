@@ -1,3 +1,104 @@
 ### YamlMime:XRefMap
 sorted: true
-references: []
+references:
+- uid: Bank.Domain
+  name: Bank.Domain
+  href: api/Bank.Domain.html
+  commentId: N:Bank.Domain
+  fullName: Bank.Domain
+  nameWithType: Bank.Domain
+- uid: Bank.Domain.BankAccount
+  name: BankAccount
+  href: api/Bank.Domain.BankAccount.html
+  commentId: T:Bank.Domain.BankAccount
+  fullName: Bank.Domain.BankAccount
+  nameWithType: BankAccount
+- uid: Bank.Domain.BankAccount.#ctor(System.String,System.Double)
+  name: BankAccount(string, double)
+  href: api/Bank.Domain.BankAccount.html#Bank_Domain_BankAccount__ctor_System_String_System_Double_
+  commentId: M:Bank.Domain.BankAccount.#ctor(System.String,System.Double)
+  name.vb: New(String, Double)
+  fullName: Bank.Domain.BankAccount.BankAccount(string, double)
+  fullName.vb: Bank.Domain.BankAccount.New(String, Double)
+  nameWithType: BankAccount.BankAccount(string, double)
+  nameWithType.vb: BankAccount.New(String, Double)
+- uid: Bank.Domain.BankAccount.#ctor*
+  name: BankAccount
+  href: api/Bank.Domain.BankAccount.html#Bank_Domain_BankAccount__ctor_
+  commentId: Overload:Bank.Domain.BankAccount.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Bank.Domain.BankAccount.BankAccount
+  fullName.vb: Bank.Domain.BankAccount.New
+  nameWithType: BankAccount.BankAccount
+  nameWithType.vb: BankAccount.New
+- uid: Bank.Domain.BankAccount.Balance
+  name: Balance
+  href: api/Bank.Domain.BankAccount.html#Bank_Domain_BankAccount_Balance
+  commentId: P:Bank.Domain.BankAccount.Balance
+  fullName: Bank.Domain.BankAccount.Balance
+  nameWithType: BankAccount.Balance
+- uid: Bank.Domain.BankAccount.Balance*
+  name: Balance
+  href: api/Bank.Domain.BankAccount.html#Bank_Domain_BankAccount_Balance_
+  commentId: Overload:Bank.Domain.BankAccount.Balance
+  isSpec: "True"
+  fullName: Bank.Domain.BankAccount.Balance
+  nameWithType: BankAccount.Balance
+- uid: Bank.Domain.BankAccount.Credit(System.Double)
+  name: Credit(double)
+  href: api/Bank.Domain.BankAccount.html#Bank_Domain_BankAccount_Credit_System_Double_
+  commentId: M:Bank.Domain.BankAccount.Credit(System.Double)
+  name.vb: Credit(Double)
+  fullName: Bank.Domain.BankAccount.Credit(double)
+  fullName.vb: Bank.Domain.BankAccount.Credit(Double)
+  nameWithType: BankAccount.Credit(double)
+  nameWithType.vb: BankAccount.Credit(Double)
+- uid: Bank.Domain.BankAccount.Credit*
+  name: Credit
+  href: api/Bank.Domain.BankAccount.html#Bank_Domain_BankAccount_Credit_
+  commentId: Overload:Bank.Domain.BankAccount.Credit
+  isSpec: "True"
+  fullName: Bank.Domain.BankAccount.Credit
+  nameWithType: BankAccount.Credit
+- uid: Bank.Domain.BankAccount.CustomerName
+  name: CustomerName
+  href: api/Bank.Domain.BankAccount.html#Bank_Domain_BankAccount_CustomerName
+  commentId: P:Bank.Domain.BankAccount.CustomerName
+  fullName: Bank.Domain.BankAccount.CustomerName
+  nameWithType: BankAccount.CustomerName
+- uid: Bank.Domain.BankAccount.CustomerName*
+  name: CustomerName
+  href: api/Bank.Domain.BankAccount.html#Bank_Domain_BankAccount_CustomerName_
+  commentId: Overload:Bank.Domain.BankAccount.CustomerName
+  isSpec: "True"
+  fullName: Bank.Domain.BankAccount.CustomerName
+  nameWithType: BankAccount.CustomerName
+- uid: Bank.Domain.BankAccount.Debit(System.Double)
+  name: Debit(double)
+  href: api/Bank.Domain.BankAccount.html#Bank_Domain_BankAccount_Debit_System_Double_
+  commentId: M:Bank.Domain.BankAccount.Debit(System.Double)
+  name.vb: Debit(Double)
+  fullName: Bank.Domain.BankAccount.Debit(double)
+  fullName.vb: Bank.Domain.BankAccount.Debit(Double)
+  nameWithType: BankAccount.Debit(double)
+  nameWithType.vb: BankAccount.Debit(Double)
+- uid: Bank.Domain.BankAccount.Debit*
+  name: Debit
+  href: api/Bank.Domain.BankAccount.html#Bank_Domain_BankAccount_Debit_
+  commentId: Overload:Bank.Domain.BankAccount.Debit
+  isSpec: "True"
+  fullName: Bank.Domain.BankAccount.Debit
+  nameWithType: BankAccount.Debit
+- uid: Bank.Domain.BankAccount.DebitAmountExceedsBalanceMessage
+  name: DebitAmountExceedsBalanceMessage
+  href: api/Bank.Domain.BankAccount.html#Bank_Domain_BankAccount_DebitAmountExceedsBalanceMessage
+  commentId: F:Bank.Domain.BankAccount.DebitAmountExceedsBalanceMessage
+  fullName: Bank.Domain.BankAccount.DebitAmountExceedsBalanceMessage
+  nameWithType: BankAccount.DebitAmountExceedsBalanceMessage
+- uid: Bank.Domain.BankAccount.DebitAmountLessThanZeroMessage
+  name: DebitAmountLessThanZeroMessage
+  href: api/Bank.Domain.BankAccount.html#Bank_Domain_BankAccount_DebitAmountLessThanZeroMessage
+  commentId: F:Bank.Domain.BankAccount.DebitAmountLessThanZeroMessage
+  fullName: Bank.Domain.BankAccount.DebitAmountLessThanZeroMessage
+  nameWithType: BankAccount.DebitAmountLessThanZeroMessage

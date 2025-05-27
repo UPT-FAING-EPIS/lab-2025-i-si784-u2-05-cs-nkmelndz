@@ -11,6 +11,47 @@
       }
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bank.Domain.BankAccount.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bank.Domain.BankAccount.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bank.Domain.BankAccount",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bank.Domain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bank.Domain.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bank.Domain",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "docs/getting-started.md",
       "output": {

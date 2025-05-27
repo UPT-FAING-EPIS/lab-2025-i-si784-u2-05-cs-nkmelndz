@@ -1,4 +1,14 @@
 {
+  "api/Bank.Domain.BankAccount.html": {
+    "href": "api/Bank.Domain.BankAccount.html",
+    "title": "Class BankAccount | Bank",
+    "summary": "Class BankAccount Namespace Bank.Domain Assembly Bank.Domain.dll public class BankAccount Inheritance object BankAccount Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors BankAccount(string, double) public BankAccount(string customerName, double balance) Parameters customerName string balance double Fields DebitAmountExceedsBalanceMessage public const string DebitAmountExceedsBalanceMessage = \"Debit amount exceeds balance\" Field Value string DebitAmountLessThanZeroMessage public const string DebitAmountLessThanZeroMessage = \"Debit amount is less than zero\" Field Value string Properties Balance public double Balance { get; } Property Value double CustomerName public string CustomerName { get; } Property Value string Methods Credit(double) public void Credit(double amount) Parameters amount double Debit(double) public void Debit(double amount) Parameters amount double"
+  },
+  "api/Bank.Domain.html": {
+    "href": "api/Bank.Domain.html",
+    "title": "Namespace Bank.Domain | Bank",
+    "summary": "Namespace Bank.Domain Classes BankAccount"
+  },
   "docs/getting-started.html": {
     "href": "docs/getting-started.html",
     "title": "Getting Started | Bank",
@@ -11,7 +21,7 @@
   },
   "index.html": {
     "href": "index.html",
-    "title": "Documentación del Proyecto BankDomain | Bank",
-    "summary": "Documentación del Proyecto BankDomain Bienvenido a la documentación del BankDomain. Recursos Ver Reporte de Cobertura Ver Documentación de Clases (API) Ver Documentación de la Clase BankAccount Ver Reporte de Mutaciones Para más detalles sobre la sintaxis Markdown, consulta Markdown Guide."
+    "title": "This is the HOMEPAGE. | Bank",
+    "summary": "This is the HOMEPAGE. Refer to Markdown for how to write markdown files. Quick Start Notes: Add images to the images folder if the file is referencing an image."
   }
 }
