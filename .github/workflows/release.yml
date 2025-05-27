@@ -41,7 +41,7 @@ jobs:
         run: dotnet pack Bank/Bank.Domain/Bank.Domain.csproj -c Release
 
       - name: Publish package to GitHub Packages
-        run: dotnet nuget push Bank/Bank.Domain/bin/Release/*.nupkg --skip-duplicate --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GHTOKEN }}
+        run: dotnet nuget push Bank/Bank.Domain/bin/Release/*.nupkg --skip-duplicate --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --api-key ${{ secrets.GH_PACKAGES }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
